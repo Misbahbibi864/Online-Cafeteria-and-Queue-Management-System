@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Staff Dashboard | CampusBite</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <script>
+      if (sessionStorage.getItem("campusBiteStaffLoggedIn") !== "true") {
+        window.location.href = "login.html";
+      }
+    </script>
+    <!-- Dashboard Header -->
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="logo"> Campus<span>Bite.</span> </a>
+
+        <h3>Staff Dashboard</h3>
+
+        <div class="staff-nav-actions">
+          <a href="../index.html" class="login-btn"> Back to Website </a>
+
+          <button type="button" id="staff-logout" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Dashboard Heading -->
+    <section class="staff-banner">
+      <div>
+        <p>CAFETERIA MANAGEMENT</p>
+
+        <h1>Staff <span>Dashboard</span></h1>
+
+        <p>Manage customer orders and pickup status.</p>
+      </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <main class="staff-container">
+      <!-- Statistics -->
+      <section class="staff-stats">
+        <div class="staff-stat-card">
+          <p>Total Orders</p>
+          <h2 id="total-orders">0</h2>
+        </div>
+
+        <div class="staff-stat-card">
+          <p>New Orders</p>
+          <h2 id="new-orders">0</h2>
+        </div>
+
+        <div class="staff-stat-card">
+          <p>Preparing</p>
+          <h2 id="preparing-orders">0</h2>
+        </div>
+
+        <div class="staff-stat-card">
+          <p>Ready for Pickup</p>
+          <h2 id="ready-orders">0</h2>
+        </div>
+      </section>
+
+      <!-- Orders Section -->
+      <section class="staff-orders">
+        <div class="staff-orders-heading">
+          <div>
+            <h2>Customer Orders</h2>
+            <p>View and manage all incoming orders.</p>
+          </div>
+
+          <button id="refresh-orders">↻ Refresh Orders</button>
+        </div>
+
+        <!-- Order Filters -->
+        <div class="order-filters">
+          <button class="filter-btn active" data-filter="All">
+            All Orders
+          </button>
+
+          <button class="filter-btn" data-filter="Order Placed">New</button>
+
+          <button class="filter-btn" data-filter="Preparing">Preparing</button>
+
+          <button class="filter-btn" data-filter="Ready for Pickup">
+            Ready
+          </button>
+
+          <button class="filter-btn" data-filter="Completed">Completed</button>
+        </div>
+
+        <!-- Search Orders -->
+        <div class="order-search">
+          <input
+            type="text"
+            id="search-orders"
+            placeholder="Search by customer name, token or phone number..."
+          />
+        </div>
+        <!-- Orders List -->
+        <div id="staff-orders-list"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="copyright">© 2026 CampusBite. All Rights Reserved.</div>
+    </footer>
+
+    <script src="../assets/js/staff.js"></script>
+  </body>
+</html>

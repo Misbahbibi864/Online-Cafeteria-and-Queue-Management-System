@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Food Menu | CampusBite</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="logo"> Campus<span>Bite.</span> </a>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="tracking.html">My Orders</a></li>
+        </ul>
+
+        <div class="nav-actions" id="nav-actions">
+          <a href="login.html" class="login-btn">Login</a>
+          <a href="cart.html" class="signup-btn">
+            My Cart (<span id="cart-count">0</span>)
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Menu Heading -->
+    <section class="menu-banner">
+      <p>FRESH • DELICIOUS • CONVENIENT</p>
+
+      <h1>Explore Our <span>Menu</span></h1>
+
+      <p>Choose your favorite meals and create your perfect order.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+      <!-- Search -->
+      <div class="menu-search">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search your favorite food..."
+        />
+
+        <button id="search-btn">Search</button>
+      </div>
+
+      <!-- Categories -->
+      <div class="menu-categories">
+        <button class="filter-btn active" data-category="All">All</button>
+
+        <button class="filter-btn" data-category="Burgers">Burgers</button>
+
+        <button class="filter-btn" data-category="Pizza">Pizza</button>
+
+        <button class="filter-btn" data-category="Sandwiches">
+          Sandwiches
+        </button>
+
+        <button class="filter-btn" data-category="Snacks">Snacks</button>
+
+        <button class="filter-btn" data-category="Drinks">Drinks</button>
+      </div>
+
+      <!-- Food Products -->
+      <div class="menu-food-container" id="menu-food-container">
+        <!-- JavaScript will display food items here -->
+      </div>
+
+      <!-- Empty Search Message -->
+      <p id="no-results" class="no-results">No food items found.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="copyright">© 2026 CampusBite. All Rights Reserved.</div>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../data/menu-data.js"></script>
+    <script src="../assets/js/menu.js"></script>
+  </body>
+</html>

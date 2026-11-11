@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Cart | CampusBite</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="logo"> Campus<span>Bite.</span> </a>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="tracking.html">My Orders</a></li>
+        </ul>
+
+        <div class="nav-actions" id="nav-actions">
+          <a href="login.html" class="login-btn">Login</a>
+
+          <a href="cart.html" class="signup-btn">
+            My Cart (<span id="cart-count">0</span>)
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Cart Banner -->
+    <section class="cart-banner">
+      <p>YOUR SELECTION</p>
+      <h1>My <span>Shopping Cart</span></h1>
+      <p>Review your favorite meals before checkout.</p>
+    </section>
+
+    <!-- Main Cart Section -->
+    <main class="cart-section">
+      <div class="cart-layout">
+        <!-- Cart Items -->
+        <div class="cart-left">
+          <div class="cart-heading">
+            <h2>Your Items</h2>
+            <span id="cart-item-count">0 items</span>
+          </div>
+
+          <div id="cart-items">
+            <!-- JavaScript displays cart items here -->
+          </div>
+
+          <!-- Continue Shopping -->
+          <a href="menu.html" class="continue-shopping">
+            ← Continue Shopping
+          </a>
+        </div>
+
+        <!-- Order Summary -->
+        <aside class="cart-summary">
+          <h2>Order Summary</h2>
+
+          <div class="summary-row">
+            <span>Total Items</span>
+            <span id="summary-quantity">0</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">Rs. 0</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Pickup</span>
+            <span class="free-text">Free</span>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-total">
+            <span>Grand Total</span>
+            <span id="cart-total">Rs. 0</span>
+          </div>
+
+          <button id="checkout-btn" class="checkout-btn">
+            Proceed to Checkout →
+          </button>
+
+          <p class="cart-note">
+            Your complete selection will be placed under one order and one
+            unique token.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="copyright">© 2026 CampusBite. All Rights Reserved.</div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/cart.js"></script>
+  </body>
+</html>

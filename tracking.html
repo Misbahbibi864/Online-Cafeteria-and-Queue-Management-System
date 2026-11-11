@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Track My Order | CampusBite</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <script>
+      if (sessionStorage.getItem("campusBiteCustomerLoggedIn") !== "true") {
+        alert("Please log in to view your orders.");
+        window.location.href = "login.html";
+      }
+    </script>
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="logo"> Campus<span>Bite.</span> </a>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="tracking.html" class="active">My Orders</a></li>
+        </ul>
+
+        <div class="nav-actions" id="nav-actions">
+          <a href="login.html" class="login-btn">Login</a>
+          <a href="register.html" class="signup-btn">Sign Up</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Tracking Banner -->
+    <section class="tracking-banner">
+      <p>ORDER TRACKING</p>
+
+      <h1>Track Your <span>Order</span></h1>
+
+      <p>Enter your unique order token to see your order details.</p>
+    </section>
+
+    <!-- Customer Order History -->
+    <section class="customer-history">
+      <div class="history-heading">
+        <h2>My Order History</h2>
+        <p>View all your previous and current orders.</p>
+      </div>
+
+      <div id="customer-orders-list"></div>
+    </section>
+
+    <!-- Tracking Search -->
+    <main class="tracking-section">
+      <div class="tracking-search-card">
+        <div class="tracking-icon">📦</div>
+
+        <h2>Find Your Order</h2>
+
+        <p>Enter the token provided after checkout.</p>
+
+        <form id="tracking-form">
+          <input
+            type="text"
+            id="tracking-token"
+            placeholder="Example: CB-20261111-4821"
+            required
+          />
+
+          <button type="submit">Track Order →</button>
+        </form>
+
+        <p id="tracking-error"></p>
+      </div>
+
+      <!-- Order Details -->
+      <section id="tracking-result">
+        <div class="tracking-result-heading">
+          <h2>Order Details</h2>
+          <span id="order-status-badge">Order Placed</span>
+        </div>
+
+        <div class="tracking-info-grid">
+          <div>
+            <span>Order Token</span>
+            <strong id="result-token"></strong>
+          </div>
+
+          <div>
+            <span>Customer Name</span>
+            <strong id="result-name"></strong>
+          </div>
+
+          <div>
+            <span>Pickup Time</span>
+            <strong id="result-pickup"></strong>
+          </div>
+
+          <div>
+            <span>Total Amount</span>
+            <strong id="result-total"></strong>
+          </div>
+        </div>
+
+        <!-- Order Progress -->
+        <div class="order-progress">
+          <h3>Order Progress</h3>
+
+          <div class="progress-steps">
+            <div class="progress-step" data-status="Order Placed">
+              <div class="progress-circle">1</div>
+              <span>Order Placed</span>
+            </div>
+
+            <div class="progress-step" data-status="Preparing">
+              <div class="progress-circle">2</div>
+              <span>Preparing</span>
+            </div>
+
+            <div class="progress-step" data-status="Ready for Pickup">
+              <div class="progress-circle">3</div>
+              <span>Ready for Pickup</span>
+            </div>
+
+            <div class="progress-step" data-status="Completed">
+              <div class="progress-circle">4</div>
+              <span>Completed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ordered Items -->
+        <div class="tracked-items">
+          <h3>Ordered Items</h3>
+
+          <div id="tracked-items-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="copyright">© 2026 CampusBite. All Rights Reserved.</div>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/tracking.js"></script>
+  </body>
+</html>

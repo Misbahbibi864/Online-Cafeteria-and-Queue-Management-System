@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login | CampusBite</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="logo"> Campus<span>Bite.</span> </a>
+
+        <a href="../index.html" class="login-btn"> Back to Home </a>
+      </nav>
+    </header>
+
+    <section class="login-section">
+      <div class="login-container">
+        <h1>Welcome to Campus<span>Bite.</span></h1>
+
+        <p>Login to continue to your account.</p>
+
+        <!-- Customer Login -->
+        <div class="login-option">
+          <h2>Customer Login</h2>
+
+          <form id="customer-login-form">
+            <label>Email Address</label>
+            <input
+              type="email"
+              id="customer-email"
+              placeholder="Enter your email"
+              required
+            />
+
+            <label>Password</label>
+            <input
+              type="password"
+              id="customer-password"
+              placeholder="Enter your password"
+              required
+            />
+
+            <button type="submit">Customer Login</button>
+          </form>
+
+          <p>
+            Don't have an account?
+            <a href="register.html">Sign Up</a>
+          </p>
+        </div>
+
+        <!-- Staff Login -->
+        <div class="login-option">
+          <h2>Staff Login</h2>
+
+          <form id="staff-login-form">
+            <label>Staff Username</label>
+            <input
+              type="text"
+              id="staff-username"
+              placeholder="Enter staff username"
+              required
+            />
+
+            <label>Password</label>
+            <input
+              type="password"
+              id="staff-password"
+              placeholder="Enter staff password"
+              required
+            />
+
+            <button type="submit">Staff Login</button>
+          </form>
+        </div>
+
+        <p id="login-error"></p>
+      </div>
+    </section>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>
